@@ -20,6 +20,13 @@
         "play/play",
         "battle/battle"
       ]
+    },
+    {
+      "root": "games/rushhour",
+      "name": "rushhour",
+      "pages": [
+        "play/play"
+      ]
     }
   ],
   "window": {

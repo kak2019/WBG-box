@@ -14,6 +14,13 @@ Page({
         desc: '经典扫雷，小心地雷',
         emoji: '💣',
         color: '#0f9b58'
+      },
+      {
+        id: 'rushhour',
+        name: '塞车场',
+        desc: '滑动车辆，让红车出库',
+        emoji: '🚗',
+        color: '#f39c12'
       }
     ]
   },
@@ -24,6 +31,8 @@ Page({
       wx.navigateTo({ url: '/games/nonogram/play/play' })
     } else if (id === 'minesweeper') {
       wx.navigateTo({ url: '/games/minesweeper/play/play' })
+    } else if (id === 'rushhour') {
+      wx.navigateTo({ url: '/games/rushhour/play/play' })
     }
   },
 

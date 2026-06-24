@@ -1,7 +1,7 @@
 <view class="container">
   <view class="header">
     <text class="title">WBG 游戏盒</text>
-    <text class="subtitle">数织 · 扫雷 · 好友对战</text>
+    <text class="subtitle">数织 · 扫雷 · 塞车场 · 好友对战</text>
   </view>
 
   <view class="game-list">
