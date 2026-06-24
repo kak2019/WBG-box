@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <text class="title">WBG 游戏盒</text>
+    <text class="subtitle">数织 · 扫雷 · 好友对战</text>
+  </view>
+
+  <view class="game-list">
+    <view
+      class="game-card"
+      wx:for="{{games}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goGame"
+      style="border-left-color: {{item.color}}"
+    >
+      <text class="game-emoji">{{item.emoji}}</text>
+      <view class="game-info">
+        <text class="game-name">{{item.name}}</text>
+        <text class="game-desc">{{item.desc}}</text>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <button class="btn-secondary leaderboard-btn" bindtap="goLeaderboard">🏆 查看排行榜</button>
+</view>

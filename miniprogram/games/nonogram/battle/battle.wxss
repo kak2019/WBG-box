@@ -1,0 +1,7 @@
+@import '../play/play.wxss';
+
+.battle-hud {
+  margin-bottom: 24rpx;
+  font-size: 28rpx;
+  color: #ffd700;
+}

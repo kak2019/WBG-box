@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="battle-hud flex-between">
+    <text>⏱ {{timeText}}</text>
+    <text>对手进度 {{opponentProgress}}% {{opponentFinished ? '✅' : ''}}</text>
+  </view>
+
+  <view class="board-wrap" wx:if="{{puzzle}}">
+    <view class="clues-top">
+      <view class="corner" />
+      <view class="col-clues">
+        <view class="col-clue" wx:for="{{colClues}}" wx:key="index">
+          <text wx:for="{{item}}" wx:for-item="n" wx:key="*this" class="clue-num">{{n}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="board-row">
+      <view class="row-clues">
+        <view class="row-clue" wx:for="{{rowClues}}" wx:key="index">
+          <text wx:for="{{item}}" wx:for-item="n" wx:key="*this" class="clue-num">{{n}}</text>
+        </view>
+      </view>
+      <view class="grid" style="grid-template-columns: repeat({{cols}}, {{cellSize}}rpx)">
+        <view
+          wx:for="{{cells}}"
+          wx:key="index"
+          class="cell state-{{item}}"
+          style="width: {{cellSize}}rpx; height: {{cellSize}}rpx"
+          data-idx="{{index}}"
+          bindtap="onCellTap"
+        />
+      </view>
+    </view>
+  </view>
+</view>

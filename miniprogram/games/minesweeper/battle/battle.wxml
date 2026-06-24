@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="battle-hud flex-between">
+    <text>⏱ {{timeText}}</text>
+    <text>对手 {{opponentProgress}}%</text>
+  </view>
+
+  <view class="hud flex-between">
+    <text>💣 {{mineCount - flagCount}}</text>
+    <text>🚩 {{flagCount}}</text>
+  </view>
+
+  <canvas
+    type="2d"
+    id="mineCanvas"
+    class="mine-canvas"
+    bindtouchstart="onTouchStart"
+    bindtouchend="onTouchEnd"
+  />
+
+  <view class="hint text-muted">同地图竞速 · 先清完且未踩雷者胜</view>
+</view>
