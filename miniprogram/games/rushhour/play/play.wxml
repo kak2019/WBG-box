@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="level-select">
+    <view
+      wx:for="{{levels}}"
+      wx:key="id"
+      class="level-tag {{selectedLevelId === item.id ? 'active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="onSelectLevel"
+    >
+      {{item.name}}
+    </view>
+  </view>
+
+  <view class="hud flex-between">
+    <text>步数 {{moves}} / 最佳 {{minMoves}}</text>
+    <text>⏱ {{timeText}}</text>
+  </view>
+
+  <view class="board-wrap">
+    <view class="board" style="width: {{boardSize}}rpx; height: {{boardSize}}rpx">
+      <view class="grid-bg">
+        <view
+          wx:for="{{36}}"
+          wx:key="*this"
+          class="grid-cell"
+          style="width: {{cellSize}}rpx; height: {{cellSize}}rpx"
+        />
+      </view>
+
+      <view class="exit-arrow">→</view>
+
+      <view
+        wx:for="{{carViews}}"
+        wx:key="id"
+        class="car {{item.isMain ? 'main-car' : ''}} {{selectedCarId === item.id ? 'selected' : ''}}"
+        style="{{item.style}} background-color: {{item.color}}"
+        data-id="{{item.id}}"
+        catchtouchstart="onCarTouchStart"
+        catchtouchend="onCarTouchEnd"
+      >
+        <text wx:if="{{item.isMain}}" class="car-label">🚗</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{hintText}}" class="hint-bar">{{hintText}}</view>
+  <view class="tip text-muted">选中车辆后滑动：横车左右滑，竖车上下滑</view>
+
+  <view class="actions">
+    <button class="btn-secondary" bindtap="onReset">重置</button>
+    <button class="btn-primary" bindtap="onHint">💡 提示</button>
+  </view>
+</view>

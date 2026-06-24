@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/leaderboard/leaderboard",
+    "pages/room/room"
+  ],
+  "subPackages": [
+    {
+      "root": "games/nonogram",
+      "name": "nonogram",
+      "pages": [
+        "play/play",
+        "battle/battle"
+      ]
+    },
+    {
+      "root": "games/minesweeper",
+      "name": "minesweeper",
+      "pages": [
+        "play/play",
+        "battle/battle"
+      ]
+    },
+    {
+      "root": "games/rushhour",
+      "name": "rushhour",
+      "pages": [
+        "play/play"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarTitleText": "WBG 游戏盒",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#16213e"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

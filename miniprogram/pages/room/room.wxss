@@ -1,0 +1,73 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.error {
+  color: #e94560;
+}
+
+.room-card {
+  text-align: center;
+}
+
+.game-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+}
+
+.room-id {
+  display: block;
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 48rpx;
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32rpx;
+  margin-bottom: 48rpx;
+}
+
+.player {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16rpx;
+  padding: 32rpx 16rpx;
+}
+
+.player-label {
+  display: block;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12rpx;
+}
+
+.player-status {
+  display: block;
+  font-size: 28rpx;
+}
+
+.vs {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #e94560;
+}
+
+.status-text {
+  margin-bottom: 32rpx;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ready-btn {
+  margin-top: 24rpx;
+  width: 100%;
+}

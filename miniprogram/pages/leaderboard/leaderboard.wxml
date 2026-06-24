@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="tabs">
+    <view
+      wx:for="{{tabs}}"
+      wx:key="key"
+      class="tab {{activeTab === index ? 'active' : ''}}"
+      data-index="{{index}}"
+      bindtap="onTabChange"
+    >
+      {{item.label}}
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view wx:elif="{{list.length === 0}}" class="empty">暂无排行数据，快去玩游戏吧！</view>
+
+  <scroll-view wx:else scroll-y class="rank-list">
+    <view class="rank-item" wx:for="{{list}}" wx:key="_id">
+      <text class="rank-num {{item.rank <= 3 ? 'top' : ''}}">{{item.rank}}</text>
+      <view class="rank-avatar">{{item.nickname ? item.nickname[0] : '?'}}</view>
+      <text class="nickname">{{item.nickname || '玩家'}}</text>
+      <text class="score">{{item.displayValue}}</text>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{myRecord}}" class="my-rank card">
+    <text>我的最佳：第 {{myRecord.rank || '--'}} 名 · {{myRecord.displayValue}}</text>
+  </view>
+</view>

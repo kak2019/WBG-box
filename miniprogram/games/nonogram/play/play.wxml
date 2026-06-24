@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="puzzle-select">
+    <view
+      wx:for="{{puzzles}}"
+      wx:key="id"
+      class="puzzle-tag {{selectedPuzzleId === item.id ? 'active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="onSelectPuzzle"
+    >
+      {{item.name}}
+    </view>
+  </view>
+
+  <view class="hud flex-between">
+    <text class="timer">⏱ {{timeText}}</text>
+    <text class="mistakes">错误: {{mistakes}}</text>
+  </view>
+
+  <view class="board-wrap">
+    <view class="clues-top">
+      <view class="corner" />
+      <view class="col-clues">
+        <view class="col-clue" wx:for="{{colClues}}" wx:key="index">
+          <text wx:for="{{item}}" wx:for-item="n" wx:key="*this" class="clue-num">{{n}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="board-row">
+      <view class="row-clues">
+        <view class="row-clue" wx:for="{{rowClues}}" wx:key="index">
+          <text wx:for="{{item}}" wx:for-item="n" wx:key="*this" class="clue-num">{{n}}</text>
+        </view>
+      </view>
+      <view
+        class="grid"
+        style="grid-template-columns: repeat({{cols}}, {{cellSize}}rpx)"
+      >
+        <view
+          wx:for="{{cells}}"
+          wx:key="index"
+          class="cell state-{{item}}"
+          style="width: {{cellSize}}rpx; height: {{cellSize}}rpx"
+          data-idx="{{index}}"
+          bindtap="onCellTap"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="btn-secondary" bindtap="onReset">重置</button>
+    <button class="btn-primary" bindtap="createBattle">邀请好友对战</button>
+  </view>
+</view>
